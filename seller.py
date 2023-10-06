@@ -58,7 +58,7 @@ def update_price(prices: list, client_id, seller_token):
 
     Returns:
         dict:  decoded response from API
-        
+
     """
     url = "https://api-seller.ozon.ru/v1/product/import/prices"
     headers = {
@@ -106,6 +106,7 @@ def download_stock():
 
 
 def create_stocks(watch_remnants, offer_ids):
+    """Create a list of watches stocks based on dictionary with watches and IDs of goods on marketplace."""
     # Уберем то, что не загружено в seller
     stocks = []
     for watch in watch_remnants:
