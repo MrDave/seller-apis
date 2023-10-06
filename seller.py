@@ -49,7 +49,17 @@ def get_offer_ids(client_id, seller_token):
 
 
 def update_price(prices: list, client_id, seller_token):
-    """Обновить цены товаров"""
+    """Update prices on Ozon marketplace.
+
+    Args:
+        prices: list of prices to be uploaded
+        client_id (str): ID of the user
+        seller_token (str): user's API key
+
+    Returns:
+        dict:  decoded response from API
+        
+    """
     url = "https://api-seller.ozon.ru/v1/product/import/prices"
     headers = {
         "Client-Id": client_id,
