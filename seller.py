@@ -131,7 +131,20 @@ def create_prices(watch_remnants, offer_ids):
 
 
 def price_conversion(price: str) -> str:
-    """Преобразовать цену. Пример: 5'990.00 руб. -> 5990"""
+    """Remove non-digit symbols and discard fracion part.
+
+    Args:
+        price: price to convert.
+
+    Returns:
+        converted price
+
+    Example:
+        >>> price = "5'990.00 руб."
+        >>> price_conversion(price)
+        '5990'
+
+    """
     return re.sub("[^0-9]", "", price.split(".")[0])
 
 
