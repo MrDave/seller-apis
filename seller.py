@@ -149,7 +149,7 @@ def price_conversion(price: str) -> str:
 
 
 def divide(lst: list, n: int):
-    """Разделить список lst на части по n элементов"""
+    """Divide given list into parts of n elements each."""
     for i in range(0, len(lst), n):
         yield lst[i : i + n]
 
