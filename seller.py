@@ -12,7 +12,17 @@ logger = logging.getLogger(__file__)
 
 
 def get_product_list(last_id, client_id, seller_token):
-    """Получить список товаров магазина озон"""
+    """Get product list from Ozon marketplace
+    
+    Args: 
+        last_id (str): ID of the last value on the page. Blank for the first page 
+        client_id (str): ID of the user
+        seller_token (str): user's API key
+
+    Returns:
+        dict: products, their total number and the last value's ID
+
+    """
     url = "https://api-seller.ozon.ru/v2/product/list"
     headers = {
         "Client-Id": client_id,
