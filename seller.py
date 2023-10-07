@@ -106,7 +106,16 @@ def download_stock():
 
 
 def create_stocks(watch_remnants, offer_ids):
-    """Create a list of watches stocks based on dictionary with watches and IDs of goods on marketplace."""
+    """Create a list of watches stocks based on dictionary with watches and IDs of goods on marketplace.
+    
+    Args:
+        watch_remains (dict): watches' info, created by download_stock function
+        offer_ids (list): item IDs on marketplace 
+
+    Returns:
+        list: watch stocks in marketplace's format
+
+    """
     # Уберем то, что не загружено в seller
     stocks = []
     for watch in watch_remnants:
