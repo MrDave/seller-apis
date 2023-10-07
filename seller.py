@@ -136,6 +136,16 @@ def create_stocks(watch_remnants, offer_ids):
 
 
 def create_prices(watch_remnants, offer_ids):
+    """Create a list of watches prices based on dictionary with watches and IDs of goods on marketplace.
+    
+    Args:
+        watch_remains (dict): watches' info, created by download_stock function
+        offer_ids (list): item IDs on marketplace 
+
+    Returns:
+        list: watch prices in marketplace's format
+
+    """
     prices = []
     for watch in watch_remnants:
         if str(watch.get("Код")) in offer_ids:
