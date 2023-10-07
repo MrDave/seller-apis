@@ -42,7 +42,7 @@ def get_product_list(last_id, client_id, seller_token):
 
 
 def get_offer_ids(client_id, seller_token):
-    """Получить артикулы товаров магазина озон"""
+    """Get a list of products' offer IDs from Ozon marketplace using user's ID and API token."""
     last_id = ""
     product_list = []
     while True:
