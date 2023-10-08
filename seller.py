@@ -195,6 +195,17 @@ def divide(lst: list, n: int):
 
 
 async def upload_prices(watch_remnants, client_id, seller_token):
+    """Upload prices to Ozon marketplace.
+
+    Args:
+        watch_remains (dict): watches' info, created by download_stock function
+        client_id (str): ID of the user
+        seller_token (str): user's API key
+
+    Returns:
+        list: watch prices in marketplace's format
+
+    """
     offer_ids = get_offer_ids(client_id, seller_token)
     prices = create_prices(watch_remnants, offer_ids)
     for some_price in list(divide(prices, 1000)):
