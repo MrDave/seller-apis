@@ -164,7 +164,7 @@ def create_prices(watch_remnants, offer_ids):
 
 
 async def upload_prices(watch_remnants, campaign_id, market_token):
-    """Upload prices to Ozon marketplace.
+    """Upload prices to Yandex Market.
 
     Args:
         watch_remains (dict): watches' info, created by download_stock function
