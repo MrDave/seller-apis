@@ -1,7 +1,7 @@
 # Seller APIs
 
-Скрипты для обновления товаров и цен на маркетплейсах Ozon Seller и Яндекс Маркет.
+Scripts designed for updating items and prices on Ozon Seller and Yandex Market marketplaces.
 
 ## OZON Seller
 
-Скрипт `seller.py` работает с площадкой Ozon Seller. При выполнении обновляет остатки товара на площадке Озон с помощью данных с сайта casio и обновляет цены.
+Script `seller.py` works with Ozon Seller marketplace. It updates stocks and prices of watches with the help of an inventory spreadsheet from casio website.
