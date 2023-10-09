@@ -92,12 +92,12 @@ def create_stocks(watch_remnants, offer_ids, warehouse_id):
     """Create a list of watches stocks based on dictionary with watches and IDs of goods on marketplace.
     
     Args:
-        watch_remains (dict): watches' inventory
-        offer_ids (list): item IDs on marketplace 
-        warehouse_id (str): ID of either FBS or DBS warehouse
+        watch_remains (dict): watches' inventory.
+        offer_ids (list): item IDs on marketplace .
+        warehouse_id (str): ID of either FBS or DBS warehouse.
 
     Returns:
-        list: watch stocks in marketplace's format
+        list: watch stocks in marketplace's format.
 
     """
     # Уберем то, что не загружено в market
@@ -148,11 +148,11 @@ def create_prices(watch_remnants, offer_ids):
     """Create a list of watches prices based on dictionary with watches and IDs of goods on marketplace.
     
     Args:
-        watch_remains (dict): watches' inventory
-        offer_ids (list): item IDs on marketplace 
+        watch_remains (dict): watches' inventory.
+        offer_ids (list): item IDs on marketplace.
 
     Returns:
-        list: watch prices in marketplace's format
+        list: watch prices in marketplace's format.
 
     """
     prices = []
@@ -178,12 +178,12 @@ async def upload_prices(watch_remnants, campaign_id, market_token):
     """Upload prices to Yandex Market.
 
     Args:
-        watch_remains (dict): watches' info, created by download_stock function
-        campaign_id (str): ID of either FBS or DBS marketplace campaign
-        market_token (str): user's API key for Yandex Market
+        watch_remains (dict): watches' info, created by download_stock function.
+        campaign_id (str): ID of either FBS or DBS marketplace campaign.
+        market_token (str): user's API key for Yandex Market.
 
     Returns:
-        list: watches prices in marketplace's format
+        list: watches prices in marketplace's format.
 
     """
     offer_ids = get_offer_ids(campaign_id, market_token)

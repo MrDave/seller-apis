@@ -12,7 +12,7 @@ logger = logging.getLogger(__file__)
 
 
 def get_product_list(last_id, client_id, seller_token):
-    """Get product list from Ozon marketplace
+    """Get product list from Ozon marketplace.
     
     Args: 
         last_id (str): ID of the last value on the page. Blank for the first page.
