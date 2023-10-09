@@ -41,6 +41,17 @@ def get_product_list(page, campaign_id, access_token):
 
 
 def update_stocks(stocks, campaign_id, access_token):
+    """Update stocks.
+
+    Args:
+        stocks (list): watch stocks in marketplace's format.
+        campaign_id (str): ID of either FBS or DBS marketplace campaign.
+        access_token (str): user's API key.
+
+    Returns:
+        dict: decoded response from API.
+
+    """
     endpoint_url = "https://api.partner.market.yandex.ru/"
     headers = {
         "Content-Type": "application/json",
