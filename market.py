@@ -183,6 +183,18 @@ async def upload_prices(watch_remnants, campaign_id, market_token):
 
 
 async def upload_stocks(watch_remnants, campaign_id, market_token, warehouse_id):
+    """Upload stocks to Yandex Market.
+
+    Args:
+        watch_remains (dict): watches' info, created by download_stock function.
+        campaign_id (str): ID of either FBS or DBS marketplace campaign.
+        market_token (str): user's API key for Yandex Market.
+        warehouse_id (str): ID of either FBS or DBS warehouse.
+
+    Returns:
+        tuple: list of non-empty (greater than 0) stocks and list of all stocks.
+
+    """
     offer_ids = get_offer_ids(campaign_id, market_token)
     stocks = create_stocks(watch_remnants, offer_ids, warehouse_id)
     for some_stock in list(divide(stocks, 2000)):
