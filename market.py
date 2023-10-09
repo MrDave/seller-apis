@@ -78,6 +78,17 @@ def get_offer_ids(campaign_id, market_token):
 
 
 def create_stocks(watch_remnants, offer_ids, warehouse_id):
+    """Create a list of watches stocks based on dictionary with watches and IDs of goods on marketplace.
+    
+    Args:
+        watch_remains (dict): watches' inventory
+        offer_ids (list): item IDs on marketplace 
+        warehouse_id (str): ID of either FBS or DBS warehouse
+
+    Returns:
+        list: watch stocks in marketplace's format
+
+    """
     # Уберем то, что не загружено в market
     stocks = list()
     date = str(datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z")
