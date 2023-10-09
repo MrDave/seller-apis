@@ -62,7 +62,7 @@ def update_price(prices, campaign_id, access_token):
 
 
 def get_offer_ids(campaign_id, market_token):
-    """Получить артикулы товаров Яндекс маркета"""
+    """Get a list of products' offer IDs from Yandex Market using campaign's ID and API token."""
     page = ""
     product_list = []
     while True:
