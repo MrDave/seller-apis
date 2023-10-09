@@ -214,6 +214,17 @@ async def upload_prices(watch_remnants, client_id, seller_token):
 
 
 async def upload_stocks(watch_remnants, client_id, seller_token):
+    """Upload stocks to Ozon marketplace.
+
+    Args:
+        watch_remains (dict): watches' info, created by download_stock function
+        client_id (str): ID of the user
+        seller_token (str): user's API key
+
+    Returns:
+        tuple: list of non-empty (greater than 0) stocks and list of all stocks.
+
+    """
     offer_ids = get_offer_ids(client_id, seller_token)
     stocks = create_stocks(watch_remnants, offer_ids)
     for some_stock in list(divide(stocks, 100)):
