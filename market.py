@@ -46,6 +46,17 @@ def update_stocks(stocks, campaign_id, access_token):
 
 
 def update_price(prices, campaign_id, access_token):
+    """Update prices on Yandex Market.
+
+    Args:
+        prices: list of prices to be uploaded.
+        campaign_id (str): ID of either FBS or DBS marketplace campaign.
+        access_token (str): user's API key.
+
+    Returns:
+        dict:  decoded response from API.
+
+    """
     endpoint_url = "https://api.partner.market.yandex.ru/"
     headers = {
         "Content-Type": "application/json",
