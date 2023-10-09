@@ -11,6 +11,17 @@ logger = logging.getLogger(__file__)
 
 
 def get_product_list(page, campaign_id, access_token):
+    """Get product list from Yandex Market.
+    
+    Args: 
+        page (str): ID of results page.
+        campaign_id (str): ID of either FBS or DBS marketplace campaign.
+        access_token (str): user's API key.
+
+    Returns:
+        dict: products, their total number and the last value's ID.
+
+    """
     endpoint_url = "https://api.partner.market.yandex.ru/"
     headers = {
         "Content-Type": "application/json",
