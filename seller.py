@@ -15,12 +15,12 @@ def get_product_list(last_id, client_id, seller_token):
     """Get product list from Ozon marketplace
     
     Args: 
-        last_id (str): ID of the last value on the page. Blank for the first page 
-        client_id (str): ID of the user
-        seller_token (str): user's API key
+        last_id (str): ID of the last value on the page. Blank for the first page.
+        client_id (str): ID of the user.
+        seller_token (str): user's API key.
 
     Returns:
-        dict: products, their total number and the last value's ID
+        dict: products, their total number and the last value's ID.
 
     """
     url = "https://api-seller.ozon.ru/v2/product/list"
@@ -62,12 +62,12 @@ def update_price(prices: list, client_id, seller_token):
     """Update prices on Ozon marketplace.
 
     Args:
-        prices: list of prices to be uploaded
-        client_id (str): ID of the user
-        seller_token (str): user's API key
+        prices: list of prices to be uploaded.
+        client_id (str): ID of the user.
+        seller_token (str): user's API key.
 
     Returns:
-        dict:  decoded response from API
+        dict:  decoded response from API.
 
     """
     url = "https://api-seller.ozon.ru/v1/product/import/prices"
@@ -119,11 +119,11 @@ def create_stocks(watch_remnants, offer_ids):
     """Create a list of watches stocks based on dictionary with watches and IDs of goods on marketplace.
     
     Args:
-        watch_remains (dict): watches' info, created by download_stock function
-        offer_ids (list): item IDs on marketplace 
+        watch_remains (dict): watches' info, created by download_stock function.
+        offer_ids (list): item IDs on marketplace.
 
     Returns:
-        list: watch stocks in marketplace's format
+        list: watch stocks in marketplace's format.
 
     """
     # Уберем то, что не загружено в seller
@@ -149,11 +149,11 @@ def create_prices(watch_remnants, offer_ids):
     """Create a list of watches prices based on dictionary with watches and IDs of goods on marketplace.
     
     Args:
-        watch_remains (dict): watches' info, created by download_stock function
-        offer_ids (list): item IDs on marketplace 
+        watch_remains (dict): watches' info, created by download_stock function.
+        offer_ids (list): item IDs on marketplace .
 
     Returns:
-        list: watch prices in marketplace's format
+        list: watch prices in marketplace's format.
 
     """
     prices = []
@@ -177,7 +177,7 @@ def price_conversion(price: str) -> str:
         price: price to convert.
 
     Returns:
-        converted price
+        converted price.
 
     Example:
         >>> price = "5'990.00 руб."
@@ -198,12 +198,12 @@ async def upload_prices(watch_remnants, client_id, seller_token):
     """Upload prices to Ozon marketplace.
 
     Args:
-        watch_remains (dict): watches' info, created by download_stock function
-        client_id (str): ID of the user
-        seller_token (str): user's API key
+        watch_remains (dict): watches' info, created by download_stock function.
+        client_id (str): ID of the user.
+        seller_token (str): user's API key.
 
     Returns:
-        list: watch prices in marketplace's format
+        list: watch prices in marketplace's format.
 
     """
     offer_ids = get_offer_ids(client_id, seller_token)
@@ -217,9 +217,9 @@ async def upload_stocks(watch_remnants, client_id, seller_token):
     """Upload stocks to Ozon marketplace.
 
     Args:
-        watch_remains (dict): watches' info, created by download_stock function
-        client_id (str): ID of the user
-        seller_token (str): user's API key
+        watch_remains (dict): watches' info, created by download_stock function.
+        client_id (str): ID of the user.
+        seller_token (str): user's API key.
 
     Returns:
         tuple: list of non-empty (greater than 0) stocks and list of all stocks.
