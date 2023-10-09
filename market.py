@@ -164,6 +164,17 @@ def create_prices(watch_remnants, offer_ids):
 
 
 async def upload_prices(watch_remnants, campaign_id, market_token):
+    """Upload prices to Ozon marketplace.
+
+    Args:
+        watch_remains (dict): watches' info, created by download_stock function
+        campaign_id (str): ID of either FBS or DBS marketplace campaign
+        market_token (str): user's API key for Yandex Market
+
+    Returns:
+        list: watches prices in marketplace's format
+
+    """
     offer_ids = get_offer_ids(campaign_id, market_token)
     prices = create_prices(watch_remnants, offer_ids)
     for some_prices in list(divide(prices, 500)):
